@@ -15,6 +15,7 @@ def is_valid_url(url):
     except ValueError:
         return False
 
+
 def get_api_url():
     api_url = st.text_input('Enter the API URL:', '')
     #is_valid = is_valid_url(api_url)
