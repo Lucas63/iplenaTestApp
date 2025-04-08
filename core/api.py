@@ -41,18 +41,16 @@ def upload_front_photo(base_url, image_file):
     return response.json()[0]
 
 def get_spine(base_url,
-              side_photo_line_points,
               side_photo_feature_points,
-              side_photo_keypoints_3d_denormalized):
-              #front_photo_keypoints_2d):
+              side_photo_keypoints_3d_denormalized,
+              front_photo_keypoints_2d):
     data = {
-        "side_photo_line_points": side_photo_line_points,
         "side_photo_feature_points": side_photo_feature_points,
         "side_photo_keypoints_3d_denormalized": side_photo_keypoints_3d_denormalized,
-        # "front_photo_keypoints_2d": front_photo_keypoints_2d
+        "front_photo_keypoints_2d": front_photo_keypoints_2d
     }
+
     r = requests.post(f"{base_url}/ai/get_spine", json=data)
-    print(r.text)
     print(f"{base_url}/ai/get_spine")
 
     try:
